@@ -1,0 +1,6 @@
+framework module Pods_FindPlayer__macOS_ {
+  umbrella header "Pods-FindPlayer (macOS)-umbrella.h"
+
+  export *
+  module * { export * }
+}

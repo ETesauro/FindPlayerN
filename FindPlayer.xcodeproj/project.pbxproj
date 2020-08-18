@@ -3,27 +3,95 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		315138737A9B5C08EA3865F3 /* Pods_FindPlayer__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2203FAB99779272D5C38960 /* Pods_FindPlayer__macOS_.framework */; };
 		3295178A24EBE6670005C1FA /* FindPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177724EBE6660005C1FA /* FindPlayerApp.swift */; };
 		3295178B24EBE6670005C1FA /* FindPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177724EBE6660005C1FA /* FindPlayerApp.swift */; };
-		3295178C24EBE6670005C1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177824EBE6660005C1FA /* ContentView.swift */; };
-		3295178D24EBE6670005C1FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177824EBE6660005C1FA /* ContentView.swift */; };
 		3295178E24EBE6670005C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3295177924EBE6660005C1FA /* Assets.xcassets */; };
 		3295178F24EBE6670005C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3295177924EBE6660005C1FA /* Assets.xcassets */; };
+		3295179D24EBF21D0005C1FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3295179C24EBF21D0005C1FA /* GoogleService-Info.plist */; };
+		3295179E24EBF21D0005C1FA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3295179C24EBF21D0005C1FA /* GoogleService-Info.plist */; };
+		32E7309224EBF9AE008A2F1E /* FortniteDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309124EBF9AD008A2F1E /* FortniteDetailView.swift */; };
+		32E7309424EBF9B8008A2F1E /* CODDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309324EBF9B8008A2F1E /* CODDetailView.swift */; };
+		32E7309624EBF9BE008A2F1E /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309524EBF9BE008A2F1E /* ErrorView.swift */; };
+		32E7309A24EBF9D2008A2F1E /* TopGamesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309724EBF9D1008A2F1E /* TopGamesView.swift */; };
+		32E7309B24EBF9D2008A2F1E /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309824EBF9D1008A2F1E /* LottieView.swift */; };
+		32E7309C24EBF9D2008A2F1E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309924EBF9D2008A2F1E /* MainView.swift */; };
+		32E730A324EBF9F6008A2F1E /* TabButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309E24EBF9F5008A2F1E /* TabButtonView.swift */; };
+		32E730A424EBF9F6008A2F1E /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E7309F24EBF9F5008A2F1E /* SearchView.swift */; };
+		32E730A524EBF9F6008A2F1E /* RoundedShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730A024EBF9F5008A2F1E /* RoundedShape.swift */; };
+		32E730A624EBF9F6008A2F1E /* URLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730A124EBF9F5008A2F1E /* URLImageView.swift */; };
+		32E730A724EBF9F6008A2F1E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730A224EBF9F6008A2F1E /* ProfileView.swift */; };
+		32E730AD24EBFA04008A2F1E /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730A924EBFA03008A2F1E /* CustomTextFieldView.swift */; };
+		32E730AE24EBFA04008A2F1E /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730AA24EBFA04008A2F1E /* LoadingView.swift */; };
+		32E730AF24EBFA04008A2F1E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730AB24EBFA04008A2F1E /* LoginView.swift */; };
+		32E730B024EBFA04008A2F1E /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730AC24EBFA04008A2F1E /* SignUpView.swift */; };
+		32E730B524EBFA4F008A2F1E /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730B424EBFA4F008A2F1E /* ModelData.swift */; };
+		32E730B824EBFA55008A2F1E /* CODGameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730B624EBFA55008A2F1E /* CODGameStats.swift */; };
+		32E730B924EBFA55008A2F1E /* CODResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730B724EBFA55008A2F1E /* CODResponse.swift */; };
+		32E730BE24EBFA5C008A2F1E /* FortniteStatsDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730BA24EBFA5B008A2F1E /* FortniteStatsDetails.swift */; };
+		32E730BF24EBFA5C008A2F1E /* FortniteResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730BB24EBFA5C008A2F1E /* FortniteResponse.swift */; };
+		32E730C024EBFA5C008A2F1E /* FortniteCategoryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730BC24EBFA5C008A2F1E /* FortniteCategoryDetails.swift */; };
+		32E730C124EBFA5C008A2F1E /* FortniteGameStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730BD24EBFA5C008A2F1E /* FortniteGameStats.swift */; };
+		32E730C524EBFA67008A2F1E /* TopGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730C224EBFA66008A2F1E /* TopGames.swift */; };
+		32E730C624EBFA67008A2F1E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730C324EBFA66008A2F1E /* Game.swift */; };
+		32E730C724EBFA67008A2F1E /* URLImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730C424EBFA67008A2F1E /* URLImageModel.swift */; };
+		32E730C824EBFA6D008A2F1E /* URLImageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730C424EBFA67008A2F1E /* URLImageModel.swift */; };
+		32E730C924EBFA6D008A2F1E /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730C324EBFA66008A2F1E /* Game.swift */; };
+		32E730CA24EBFA6D008A2F1E /* TopGames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730C224EBFA66008A2F1E /* TopGames.swift */; };
+		32E730CC24EBFA82008A2F1E /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E730CB24EBFA82008A2F1E /* DataTest.swift */; };
+		32E730CF24EBFA8A008A2F1E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 32E730CD24EBFA8A008A2F1E /* loading.json */; };
+		32E730D024EBFA8A008A2F1E /* loading2.json in Resources */ = {isa = PBXBuildFile; fileRef = 32E730CE24EBFA8A008A2F1E /* loading2.json */; };
+		32E730D324EBFAEA008A2F1E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 32E730D224EBFAEA008A2F1E /* Lottie */; };
+		AA1CED40FFE6DCEDD6D75579 /* Pods_FindPlayer__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EAD5DF6855E45513D72F96 /* Pods_FindPlayer__iOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3295177724EBE6660005C1FA /* FindPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlayerApp.swift; sourceTree = "<group>"; };
-		3295177824EBE6660005C1FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3295177924EBE6660005C1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3295177E24EBE6670005C1FA /* FindPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3295178124EBE6670005C1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3295178624EBE6670005C1FA /* FindPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3295178824EBE6670005C1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3295178924EBE6670005C1FA /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		3295179C24EBF21D0005C1FA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		32E7309124EBF9AD008A2F1E /* FortniteDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortniteDetailView.swift; sourceTree = "<group>"; };
+		32E7309324EBF9B8008A2F1E /* CODDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CODDetailView.swift; sourceTree = "<group>"; };
+		32E7309524EBF9BE008A2F1E /* ErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		32E7309724EBF9D1008A2F1E /* TopGamesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopGamesView.swift; sourceTree = "<group>"; };
+		32E7309824EBF9D1008A2F1E /* LottieView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		32E7309924EBF9D2008A2F1E /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		32E7309E24EBF9F5008A2F1E /* TabButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabButtonView.swift; sourceTree = "<group>"; };
+		32E7309F24EBF9F5008A2F1E /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		32E730A024EBF9F5008A2F1E /* RoundedShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedShape.swift; sourceTree = "<group>"; };
+		32E730A124EBF9F5008A2F1E /* URLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImageView.swift; sourceTree = "<group>"; };
+		32E730A224EBF9F6008A2F1E /* ProfileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		32E730A924EBFA03008A2F1E /* CustomTextFieldView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
+		32E730AA24EBFA04008A2F1E /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		32E730AB24EBFA04008A2F1E /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		32E730AC24EBFA04008A2F1E /* SignUpView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		32E730B424EBFA4F008A2F1E /* ModelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		32E730B624EBFA55008A2F1E /* CODGameStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CODGameStats.swift; sourceTree = "<group>"; };
+		32E730B724EBFA55008A2F1E /* CODResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CODResponse.swift; sourceTree = "<group>"; };
+		32E730BA24EBFA5B008A2F1E /* FortniteStatsDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortniteStatsDetails.swift; sourceTree = "<group>"; };
+		32E730BB24EBFA5C008A2F1E /* FortniteResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortniteResponse.swift; sourceTree = "<group>"; };
+		32E730BC24EBFA5C008A2F1E /* FortniteCategoryDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortniteCategoryDetails.swift; sourceTree = "<group>"; };
+		32E730BD24EBFA5C008A2F1E /* FortniteGameStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FortniteGameStats.swift; sourceTree = "<group>"; };
+		32E730C224EBFA66008A2F1E /* TopGames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopGames.swift; sourceTree = "<group>"; };
+		32E730C324EBFA66008A2F1E /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		32E730C424EBFA67008A2F1E /* URLImageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLImageModel.swift; sourceTree = "<group>"; };
+		32E730CB24EBFA82008A2F1E /* DataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
+		32E730CD24EBFA8A008A2F1E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		32E730CE24EBFA8A008A2F1E /* loading2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading2.json; sourceTree = "<group>"; };
+		3C358E53D33678A594FF7C61 /* Pods-FindPlayer (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindPlayer (iOS).release.xcconfig"; path = "Target Support Files/Pods-FindPlayer (iOS)/Pods-FindPlayer (iOS).release.xcconfig"; sourceTree = "<group>"; };
+		56EAD5DF6855E45513D72F96 /* Pods_FindPlayer__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindPlayer__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B933E277C071C31616FF4F56 /* Pods-FindPlayer (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindPlayer (macOS).release.xcconfig"; path = "Target Support Files/Pods-FindPlayer (macOS)/Pods-FindPlayer (macOS).release.xcconfig"; sourceTree = "<group>"; };
+		D2203FAB99779272D5C38960 /* Pods_FindPlayer__macOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindPlayer__macOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA7D62A098E71CA95FC2968E /* Pods-FindPlayer (iOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindPlayer (iOS).debug.xcconfig"; path = "Target Support Files/Pods-FindPlayer (iOS)/Pods-FindPlayer (iOS).debug.xcconfig"; sourceTree = "<group>"; };
+		F8F4E3D3C9CDF73E4EA409A1 /* Pods-FindPlayer (macOS).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindPlayer (macOS).debug.xcconfig"; path = "Target Support Files/Pods-FindPlayer (macOS)/Pods-FindPlayer (macOS).debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +99,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1CED40FFE6DCEDD6D75579 /* Pods_FindPlayer__iOS_.framework in Frameworks */,
+				32E730D324EBFAEA008A2F1E /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				315138737A9B5C08EA3865F3 /* Pods_FindPlayer__macOS_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,10 +118,13 @@
 		3295177124EBE6660005C1FA = {
 			isa = PBXGroup;
 			children = (
+				3295179C24EBF21D0005C1FA /* GoogleService-Info.plist */,
 				3295177624EBE6660005C1FA /* Shared */,
 				3295178024EBE6670005C1FA /* iOS */,
 				3295178724EBE6670005C1FA /* macOS */,
 				3295177F24EBE6670005C1FA /* Products */,
+				9D37D45841A8339F9ED5D291 /* Pods */,
+				DE120DCA0B82372DF34399F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,8 +132,11 @@
 			isa = PBXGroup;
 			children = (
 				3295177724EBE6660005C1FA /* FindPlayerApp.swift */,
-				3295177824EBE6660005C1FA /* ContentView.swift */,
 				3295177924EBE6660005C1FA /* Assets.xcassets */,
+				3295179824EBF16D0005C1FA /* View */,
+				3295179924EBF1720005C1FA /* Model */,
+				3295179A24EBF1780005C1FA /* DataTest */,
+				3295179B24EBF17D0005C1FA /* LottieAnimations */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -90,6 +167,154 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		3295179824EBF16D0005C1FA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				32E7309D24EBF9E8008A2F1E /* SubView */,
+				32E730A824EBF9F8008A2F1E /* LoginRegister */,
+				32E7308D24EBF991008A2F1E /* Games */,
+				32E7309824EBF9D1008A2F1E /* LottieView.swift */,
+				32E7309924EBF9D2008A2F1E /* MainView.swift */,
+				32E7309724EBF9D1008A2F1E /* TopGamesView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3295179924EBF1720005C1FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				32E730B324EBFA48008A2F1E /* LoginRegister */,
+				32E730B224EBFA43008A2F1E /* COD */,
+				32E730B124EBFA32008A2F1E /* Fortnite */,
+				32E730C324EBFA66008A2F1E /* Game.swift */,
+				32E730C224EBFA66008A2F1E /* TopGames.swift */,
+				32E730C424EBFA67008A2F1E /* URLImageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3295179A24EBF1780005C1FA /* DataTest */ = {
+			isa = PBXGroup;
+			children = (
+				32E730CB24EBFA82008A2F1E /* DataTest.swift */,
+			);
+			path = DataTest;
+			sourceTree = "<group>";
+		};
+		3295179B24EBF17D0005C1FA /* LottieAnimations */ = {
+			isa = PBXGroup;
+			children = (
+				32E730CD24EBFA8A008A2F1E /* loading.json */,
+				32E730CE24EBFA8A008A2F1E /* loading2.json */,
+			);
+			path = LottieAnimations;
+			sourceTree = "<group>";
+		};
+		32E7308D24EBF991008A2F1E /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				32E7309024EBF9A4008A2F1E /* Fortnite */,
+				32E7308F24EBF9A0008A2F1E /* COD */,
+				32E7308E24EBF99A008A2F1E /* ErrorPage */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		32E7308E24EBF99A008A2F1E /* ErrorPage */ = {
+			isa = PBXGroup;
+			children = (
+				32E7309524EBF9BE008A2F1E /* ErrorView.swift */,
+			);
+			path = ErrorPage;
+			sourceTree = "<group>";
+		};
+		32E7308F24EBF9A0008A2F1E /* COD */ = {
+			isa = PBXGroup;
+			children = (
+				32E7309324EBF9B8008A2F1E /* CODDetailView.swift */,
+			);
+			path = COD;
+			sourceTree = "<group>";
+		};
+		32E7309024EBF9A4008A2F1E /* Fortnite */ = {
+			isa = PBXGroup;
+			children = (
+				32E7309124EBF9AD008A2F1E /* FortniteDetailView.swift */,
+			);
+			path = Fortnite;
+			sourceTree = "<group>";
+		};
+		32E7309D24EBF9E8008A2F1E /* SubView */ = {
+			isa = PBXGroup;
+			children = (
+				32E730A224EBF9F6008A2F1E /* ProfileView.swift */,
+				32E730A024EBF9F5008A2F1E /* RoundedShape.swift */,
+				32E7309F24EBF9F5008A2F1E /* SearchView.swift */,
+				32E7309E24EBF9F5008A2F1E /* TabButtonView.swift */,
+				32E730A124EBF9F5008A2F1E /* URLImageView.swift */,
+			);
+			path = SubView;
+			sourceTree = "<group>";
+		};
+		32E730A824EBF9F8008A2F1E /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				32E730A924EBFA03008A2F1E /* CustomTextFieldView.swift */,
+				32E730AA24EBFA04008A2F1E /* LoadingView.swift */,
+				32E730AB24EBFA04008A2F1E /* LoginView.swift */,
+				32E730AC24EBFA04008A2F1E /* SignUpView.swift */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		32E730B124EBFA32008A2F1E /* Fortnite */ = {
+			isa = PBXGroup;
+			children = (
+				32E730BC24EBFA5C008A2F1E /* FortniteCategoryDetails.swift */,
+				32E730BD24EBFA5C008A2F1E /* FortniteGameStats.swift */,
+				32E730BB24EBFA5C008A2F1E /* FortniteResponse.swift */,
+				32E730BA24EBFA5B008A2F1E /* FortniteStatsDetails.swift */,
+			);
+			path = Fortnite;
+			sourceTree = "<group>";
+		};
+		32E730B224EBFA43008A2F1E /* COD */ = {
+			isa = PBXGroup;
+			children = (
+				32E730B624EBFA55008A2F1E /* CODGameStats.swift */,
+				32E730B724EBFA55008A2F1E /* CODResponse.swift */,
+			);
+			path = COD;
+			sourceTree = "<group>";
+		};
+		32E730B324EBFA48008A2F1E /* LoginRegister */ = {
+			isa = PBXGroup;
+			children = (
+				32E730B424EBFA4F008A2F1E /* ModelData.swift */,
+			);
+			path = LoginRegister;
+			sourceTree = "<group>";
+		};
+		9D37D45841A8339F9ED5D291 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA7D62A098E71CA95FC2968E /* Pods-FindPlayer (iOS).debug.xcconfig */,
+				3C358E53D33678A594FF7C61 /* Pods-FindPlayer (iOS).release.xcconfig */,
+				F8F4E3D3C9CDF73E4EA409A1 /* Pods-FindPlayer (macOS).debug.xcconfig */,
+				B933E277C071C31616FF4F56 /* Pods-FindPlayer (macOS).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DE120DCA0B82372DF34399F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56EAD5DF6855E45513D72F96 /* Pods_FindPlayer__iOS_.framework */,
+				D2203FAB99779272D5C38960 /* Pods_FindPlayer__macOS_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -97,15 +322,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3295179224EBE6670005C1FA /* Build configuration list for PBXNativeTarget "FindPlayer (iOS)" */;
 			buildPhases = (
+				0309C085535E59C6B0B0EF8D /* [CP] Check Pods Manifest.lock */,
 				3295177A24EBE6670005C1FA /* Sources */,
 				3295177B24EBE6670005C1FA /* Frameworks */,
 				3295177C24EBE6670005C1FA /* Resources */,
+				68C5E0E62B967E67F0DC9212 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "FindPlayer (iOS)";
+			packageProductDependencies = (
+				32E730D224EBFAEA008A2F1E /* Lottie */,
+			);
 			productName = "FindPlayer (iOS)";
 			productReference = 3295177E24EBE6670005C1FA /* FindPlayer.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +344,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3295179524EBE6670005C1FA /* Build configuration list for PBXNativeTarget "FindPlayer (macOS)" */;
 			buildPhases = (
+				97A4AD3F69BCA5B7707E4908 /* [CP] Check Pods Manifest.lock */,
 				3295178224EBE6670005C1FA /* Sources */,
 				3295178324EBE6670005C1FA /* Frameworks */,
 				3295178424EBE6670005C1FA /* Resources */,
@@ -153,6 +384,9 @@
 				Base,
 			);
 			mainGroup = 3295177124EBE6660005C1FA;
+			packageReferences = (
+				32E730D124EBFAEA008A2F1E /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = 3295177F24EBE6670005C1FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -169,6 +403,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3295178E24EBE6670005C1FA /* Assets.xcassets in Resources */,
+				32E730D024EBFA8A008A2F1E /* loading2.json in Resources */,
+				3295179D24EBF21D0005C1FA /* GoogleService-Info.plist in Resources */,
+				32E730CF24EBFA8A008A2F1E /* loading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,17 +414,107 @@
 			buildActionMask = 2147483647;
 			files = (
 				3295178F24EBE6670005C1FA /* Assets.xcassets in Resources */,
+				3295179E24EBF21D0005C1FA /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0309C085535E59C6B0B0EF8D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindPlayer (iOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68C5E0E62B967E67F0DC9212 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindPlayer (iOS)/Pods-FindPlayer (iOS)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FindPlayer (iOS)/Pods-FindPlayer (iOS)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FindPlayer (iOS)/Pods-FindPlayer (iOS)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97A4AD3F69BCA5B7707E4908 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FindPlayer (macOS)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3295177A24EBE6670005C1FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3295178C24EBE6670005C1FA /* ContentView.swift in Sources */,
+				32E730A424EBF9F6008A2F1E /* SearchView.swift in Sources */,
+				32E730C024EBFA5C008A2F1E /* FortniteCategoryDetails.swift in Sources */,
+				32E730B924EBFA55008A2F1E /* CODResponse.swift in Sources */,
+				32E730C624EBFA67008A2F1E /* Game.swift in Sources */,
+				32E730A724EBF9F6008A2F1E /* ProfileView.swift in Sources */,
+				32E7309624EBF9BE008A2F1E /* ErrorView.swift in Sources */,
+				32E730AD24EBFA04008A2F1E /* CustomTextFieldView.swift in Sources */,
+				32E730BE24EBFA5C008A2F1E /* FortniteStatsDetails.swift in Sources */,
+				32E730A624EBF9F6008A2F1E /* URLImageView.swift in Sources */,
+				32E7309C24EBF9D2008A2F1E /* MainView.swift in Sources */,
+				32E730C724EBFA67008A2F1E /* URLImageModel.swift in Sources */,
+				32E730CC24EBFA82008A2F1E /* DataTest.swift in Sources */,
+				32E730A324EBF9F6008A2F1E /* TabButtonView.swift in Sources */,
+				32E730C524EBFA67008A2F1E /* TopGames.swift in Sources */,
+				32E730B824EBFA55008A2F1E /* CODGameStats.swift in Sources */,
+				32E7309224EBF9AE008A2F1E /* FortniteDetailView.swift in Sources */,
+				32E730AE24EBFA04008A2F1E /* LoadingView.swift in Sources */,
+				32E730C124EBFA5C008A2F1E /* FortniteGameStats.swift in Sources */,
+				32E7309424EBF9B8008A2F1E /* CODDetailView.swift in Sources */,
+				32E730B524EBFA4F008A2F1E /* ModelData.swift in Sources */,
+				32E730BF24EBFA5C008A2F1E /* FortniteResponse.swift in Sources */,
+				32E7309B24EBF9D2008A2F1E /* LottieView.swift in Sources */,
+				32E730B024EBFA04008A2F1E /* SignUpView.swift in Sources */,
+				32E7309A24EBF9D2008A2F1E /* TopGamesView.swift in Sources */,
+				32E730A524EBF9F6008A2F1E /* RoundedShape.swift in Sources */,
+				32E730AF24EBFA04008A2F1E /* LoginView.swift in Sources */,
 				3295178A24EBE6670005C1FA /* FindPlayerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -196,8 +523,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3295178D24EBE6670005C1FA /* ContentView.swift in Sources */,
+				32E730CA24EBFA6D008A2F1E /* TopGames.swift in Sources */,
+				32E730C824EBFA6D008A2F1E /* URLImageModel.swift in Sources */,
 				3295178B24EBE6670005C1FA /* FindPlayerApp.swift in Sources */,
+				32E730C924EBFA6D008A2F1E /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +646,7 @@
 		};
 		3295179324EBE6670005C1FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA7D62A098E71CA95FC2968E /* Pods-FindPlayer (iOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -340,6 +670,7 @@
 		};
 		3295179424EBE6670005C1FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3C358E53D33678A594FF7C61 /* Pods-FindPlayer (iOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -364,6 +695,7 @@
 		};
 		3295179624EBE6670005C1FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8F4E3D3C9CDF73E4EA409A1 /* Pods-FindPlayer (macOS).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -388,6 +720,7 @@
 		};
 		3295179724EBE6670005C1FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B933E277C071C31616FF4F56 /* Pods-FindPlayer (macOS).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -441,6 +774,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		32E730D124EBFAEA008A2F1E /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		32E730D224EBFAEA008A2F1E /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 32E730D124EBFAEA008A2F1E /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3295177224EBE6660005C1FA /* Project object */;
 }
