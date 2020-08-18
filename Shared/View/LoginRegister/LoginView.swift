@@ -10,12 +10,16 @@ import Firebase
 
 struct LoginView : View {
     
+    //MARK: - PROPERTIES
     @ObservedObject var model : ModelData
     
+    
+    //MARK: - BODY
     var body: some View{
         
         ZStack{
             
+            // MAIN VSTACK
             VStack{
                 
                 Spacer(minLength: 0)
@@ -39,7 +43,7 @@ struct LoginView : View {
                             .background(Color.white, alignment: .center)
                             .clipShape(Circle())
                     }
-                }
+                } //: ZSTACK
                     .padding(.horizontal)
                     .padding(.vertical,20)
                     .background(Color.white.opacity(0.2))
@@ -57,22 +61,28 @@ struct LoginView : View {
                         Text("Player")
                             .font(.system(size: 35, weight: .heavy))
                             .foregroundColor(Color("txt"))
-                    }
+                    } //: HSTACK
                     
                     Text("and win every match!")
                         .foregroundColor(Color.black.opacity(0.3))
                         .fontWeight(.heavy)
-                }
+                    
+                } //: VSTACK
                 .padding(.top)
                 
+                
+                // VSTACK TEXTFIELD
                 VStack(spacing: 20){
                     
                     CustomTextField(image: "person", placeHolder: "Email", txt: $model.email)
                     
                     CustomTextField(image: "lock", placeHolder: "Password", txt: $model.password)
-                }
+                    
+                } //: VSTACK
                 .padding(.top)
                 
+                
+                // BUTTON LOGIN
                 Button(action: model.login) {
                     
                     Text("LOGIN")
@@ -82,9 +92,11 @@ struct LoginView : View {
                         .frame(width: UIScreen.main.bounds.width - 30)
                         .background(Color.white)
                         .clipShape(Capsule())
-                }
+                } //: BUTTON
                 .padding(.top,22)
                 
+                
+                // HSTACK PER REGISTRARSI
                 HStack(spacing: 12){
                     
                     Text("Don't have an account?")
@@ -96,20 +108,23 @@ struct LoginView : View {
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                     }
-                }
+                    
+                } //: HSTACK
                 .padding(.top,25)
                 
                 Spacer(minLength: 0)
                 
+                
+                // BUTTON PER RESETTARE LA PASSWORD
                 Button(action: model.resetPassword) {
                     
                     Text("Forget Password?")
                         .fontWeight(.bold)
                         .foregroundColor(.white)
-                }
+                } //: BUTTON
                 .padding(.vertical,22)
 
-            }
+            } //: VSTACK
             
             if model.isLoading{
                 

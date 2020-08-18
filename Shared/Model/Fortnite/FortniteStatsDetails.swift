@@ -8,7 +8,6 @@
 import Foundation
 
 struct FortniteStatsDetails: Codable {
-    
     // Vittorie
     var top1: FortniteCategoryDetails
     

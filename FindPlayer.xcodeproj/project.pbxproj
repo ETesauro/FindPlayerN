@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		315138737A9B5C08EA3865F3 /* Pods_FindPlayer__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2203FAB99779272D5C38960 /* Pods_FindPlayer__macOS_.framework */; };
+		32502AB924EC28BA008491FD /* AddToDBButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32502AB824EC28BA008491FD /* AddToDBButtonView.swift */; };
+		32502ABB24EC3011008491FD /* RichiestaDiGioco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32502ABA24EC3011008491FD /* RichiestaDiGioco.swift */; };
 		3295178A24EBE6670005C1FA /* FindPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177724EBE6660005C1FA /* FindPlayerApp.swift */; };
 		3295178B24EBE6670005C1FA /* FindPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177724EBE6660005C1FA /* FindPlayerApp.swift */; };
 		3295178E24EBE6670005C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3295177924EBE6660005C1FA /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32502AB824EC28BA008491FD /* AddToDBButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDBButtonView.swift; sourceTree = "<group>"; };
+		32502ABA24EC3011008491FD /* RichiestaDiGioco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiestaDiGioco.swift; sourceTree = "<group>"; };
 		3295177724EBE6660005C1FA /* FindPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlayerApp.swift; sourceTree = "<group>"; };
 		3295177924EBE6660005C1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3295177E24EBE6670005C1FA /* FindPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -115,6 +119,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		32502AB724EC289E008491FD /* SendRequestToDBButton */ = {
+			isa = PBXGroup;
+			children = (
+				32502AB824EC28BA008491FD /* AddToDBButtonView.swift */,
+			);
+			path = SendRequestToDBButton;
+			sourceTree = "<group>";
+		};
 		3295177124EBE6660005C1FA = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +182,7 @@
 		3295179824EBF16D0005C1FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				32502AB724EC289E008491FD /* SendRequestToDBButton */,
 				32E7309D24EBF9E8008A2F1E /* SubView */,
 				32E730A824EBF9F8008A2F1E /* LoginRegister */,
 				32E7308D24EBF991008A2F1E /* Games */,
@@ -189,6 +202,7 @@
 				32E730C324EBFA66008A2F1E /* Game.swift */,
 				32E730C224EBFA66008A2F1E /* TopGames.swift */,
 				32E730C424EBFA67008A2F1E /* URLImageModel.swift */,
+				32502ABA24EC3011008491FD /* RichiestaDiGioco.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -490,6 +504,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32E730A424EBF9F6008A2F1E /* SearchView.swift in Sources */,
+				32502ABB24EC3011008491FD /* RichiestaDiGioco.swift in Sources */,
 				32E730C024EBFA5C008A2F1E /* FortniteCategoryDetails.swift in Sources */,
 				32E730B924EBFA55008A2F1E /* CODResponse.swift in Sources */,
 				32E730C624EBFA67008A2F1E /* Game.swift in Sources */,
@@ -500,6 +515,7 @@
 				32E730A624EBF9F6008A2F1E /* URLImageView.swift in Sources */,
 				32E7309C24EBF9D2008A2F1E /* MainView.swift in Sources */,
 				32E730C724EBFA67008A2F1E /* URLImageModel.swift in Sources */,
+				32502AB924EC28BA008491FD /* AddToDBButtonView.swift in Sources */,
 				32E730CC24EBFA82008A2F1E /* DataTest.swift in Sources */,
 				32E730A324EBF9F6008A2F1E /* TabButtonView.swift in Sources */,
 				32E730C524EBFA67008A2F1E /* TopGames.swift in Sources */,

@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct URLImageView: View {
+    
+    //MARK: - PROPERTIES
     @ObservedObject var urlImageModel: URLImageModel
     
+    
+    //MARK: - INIT
     init(urlString: String?) {
         urlImageModel = URLImageModel(urlString: urlString)
     }
     
+    
+    //MARK: - BODY
     var body: some View {
         Image(uiImage: urlImageModel.image ?? URLImageView.defaultImage!)
             .resizable()

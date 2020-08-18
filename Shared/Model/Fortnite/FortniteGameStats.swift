@@ -8,7 +8,6 @@
 import Foundation
 
 struct FortniteGameStats: Codable {
-    
     // p2 = solo
     var p2: FortniteStatsDetails
     

@@ -9,10 +9,13 @@ import SwiftUI
 
 struct CustomTextField : View {
     
+    //MARK: - PROPERTIES
     var image : String
     var placeHolder : String
     @Binding var txt : String
     
+    
+    //MARK: - BODY
     var body: some View{
         
         ZStack(alignment: Alignment(horizontal: .leading, vertical: .center)) {
@@ -25,20 +28,20 @@ struct CustomTextField : View {
                 .clipShape(Circle())
             
             ZStack{
-                
                 if placeHolder == "Password" || placeHolder == "Re-Enter"{
                     SecureField(placeHolder, text: $txt)
                 }
-                else{
+                else {
                     TextField(placeHolder, text: $txt)
                 }
-            }
-                .padding(.horizontal)
-                .padding(.leading,65)
-                .frame(height: 60)
-                .background(Color.white.opacity(0.2))
-                .clipShape(Capsule())
-        }
+                
+            } //: ZSTACK
+            .padding(.horizontal)
+            .padding(.leading,65)
+            .frame(height: 60)
+            .background(Color.white.opacity(0.2))
+            .clipShape(Capsule())
+        } //: ZSTACK
         .padding(.horizontal)
     }
 }

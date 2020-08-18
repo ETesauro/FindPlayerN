@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct SearchView : View {
+    //MARK: - PROPERTIES
     
+    
+    //MARK: - BODY
     var body: some View{
-
+        
         VStack{
             
             Spacer()
@@ -18,6 +21,6 @@ struct SearchView : View {
             Text("Search")
             
             Spacer()
-        }
+        } //: VSTACK
     }
 }

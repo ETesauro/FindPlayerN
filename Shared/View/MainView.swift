@@ -10,25 +10,29 @@ import Firebase
 
 struct MainView : View {
     
+    //MARK: - PROPERTIES
     @State var tab = "Explore"
     @Namespace var animation
     @State var show = false
     @State var selected : Game = gamesData[0].game
     
     
-    @AppStorage("log_Status") var status = false
-    @StateObject var model = ModelData()
+    @AppStorage("log_Status") var userIsLogged = false
+    @StateObject var model = ModelData()    
     
     
+    //MARK: - BODY
     var body: some View{
         
         ZStack{
             
-            if status {
+            // IF USERISLOGGED = TRUE -> VAI ALLA PAGINA PRINCIPALE
+            if userIsLogged {
                 
+                
+                // MAIN VSTACK
                 VStack(spacing: 0){
                     
-                    // changing Views Based On tab....
                     switch(tab){
                         case "Explore": TopGamesView(animation: animation, show: $show, selected: $selected)
                         case "Search": SearchView()
@@ -37,6 +41,7 @@ struct MainView : View {
                     
                     Spacer()
                     
+                    //HSTACK PER I TAB BUTTON (IN FONDO ALLA PAGINA)
                     HStack(spacing: 0){
                         
                         tabButton(title: "Explore", tab: $tab)
@@ -48,7 +53,7 @@ struct MainView : View {
                         Spacer(minLength: 0)
                         
                         tabButton(title: "Account", tab: $tab)
-                    }
+                    } //: HSTACK
                     .padding(.top)
                     // for smaller size iPhones....
                     .padding(.bottom,UIApplication.shared.windows.first!.safeAreaInsets.bottom == 0 ? 15 : UIApplication.shared.windows.first!.safeAreaInsets.bottom)
@@ -56,17 +61,20 @@ struct MainView : View {
                     .background(Color.white)
                     .clipShape(RoundedShape(corners: [.topLeft,.topRight]))
 
-                }
+                } //: VSTACK
                 
-            } else {
+            } //: IF
+            
+            //IF USERISLOGGED = FALSE -> DEVI FARE IL LOGIN
+            else {
                 
                 LoginView(model: model)
                 
-            }
+            } //: ELSE
             
             
             
-            // Detail View....
+            // Detail View...
             if show{
                 switch (selected.image.description) {
                 case "cod" : CODDetailView(selected: $selected, show: $show, animation: animation, model: model)
@@ -76,8 +84,10 @@ struct MainView : View {
                     //Da cambiare e mettere una pagina di errore
                     ErrorView(show: $show)
                 }
-            }
-        }
+                
+            }//: IF SHOW
+            
+        } // :ZSTACK
         .edgesIgnoringSafeArea(.all)
         .background(Color.white)
     }

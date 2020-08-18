@@ -10,6 +10,7 @@ import Firebase
 
 class ModelData : ObservableObject {
     
+    //MARK: - PROPERTIES
     @Published var email = ""
     @Published var password = ""
     @Published var isSignUp = false

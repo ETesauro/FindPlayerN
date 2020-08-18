@@ -9,9 +9,13 @@ import Foundation
 import SwiftUI
 
 class URLImageModel: ObservableObject {
+    
+    //MARK: - PROPERTIES
     @Published var image: UIImage?
     var urlString: String?
     
+    
+    //MARK: - INIT
     init(urlString: String?) {
         self.urlString = urlString
         loadImage()

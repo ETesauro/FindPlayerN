@@ -9,8 +9,11 @@ import SwiftUI
 
 struct ErrorView: View {
     
+    //MARK: - PROPERTIES
     @Binding var show : Bool
     
+    
+    //MARK: - BODY
     var body: some View {
         
         VStack{

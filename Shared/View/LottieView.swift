@@ -9,6 +9,8 @@ import SwiftUI
 import Lottie
 
 struct LottieView: UIViewRepresentable {
+    
+    //MARK: - PROPERTIES
     typealias  UIViewType = UIView
     var filename: String
     

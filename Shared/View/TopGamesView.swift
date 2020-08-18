@@ -9,18 +9,26 @@ import SwiftUI
 
 struct TopGamesView : View {
     
+    //MARK: - PROPERTIES
     @State private var topGames = [TopGames]()
     
     var animation : Namespace.ID
     @Binding var show : Bool
     @Binding var selected : Game
-        
+    
+    
+    //MARK: - BODY
     var body: some View {
         
+        // SCROLLVIEW
         ScrollView(.vertical, showsIndicators: false) {
             
+            
+            // MAIN VSTACK
             VStack (spacing: 15){
                 
+                
+                //HSTACK PER LA SCRITTA SOPRA E LA LENTE DI INGRANDIMENTO
                 HStack{
                     
                     Text("Discover a \nNew Friend")
@@ -47,10 +55,13 @@ struct TopGamesView : View {
                 .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
                 
                 
+                // SCROLLVIEW ORIZZONTALE PER LE ICONCINE SOPRA
                 ScrollView(.horizontal, showsIndicators: false) {
                     
+                    // HSTACK
                     HStack(spacing: 15){
                         
+                        // FOREACH
                         ForEach(1...6,id: \.self){i in
                             
                             Image("c\(i)")
@@ -62,12 +73,15 @@ struct TopGamesView : View {
                                     
                                     // do some stuff....
                                 }
-                        }
-                    }
+                        } //: FOREACH
+                        
+                    } //: HSTACK
                     .padding(.horizontal)
-                }
+                    
+                } //: SCROLLVIEW
                 
                 
+                // HSTACK PER LA SCRITTA TopGames E SeeAll
                 HStack{
                     
                     Text("Top Games")
@@ -82,11 +96,15 @@ struct TopGamesView : View {
                         Text("See All")
                             .foregroundColor(.gray)
                     }
-                }
+                } //: HSTACK
                 .padding(.horizontal)
                 
+                
+                // FOREACH
                 ForEach(gamesData, id: \.game.id) { item in
                     
+                    
+                    // ZSTACK
                     ZStack (alignment: Alignment(horizontal: .center, vertical: .bottom)){
                         
                         Image(item.game.image)
@@ -103,18 +121,21 @@ struct TopGamesView : View {
 //                            .padding()
 //                            .background(Color("top"))
 //                            .clipShape(Capsule())
-                    }
+                    } //: ZSTACK
                     .padding(.bottom, 25)
                     .onTapGesture {
                         withAnimation(.spring()){
                             selected = item.game
                             show.toggle()
                         }
-                    }
+                    } //: ONTAPGESTURE
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 2, x: 4, y: 4)
-                }
-            }
-        }
+                    
+                } //: FOREACH
+                
+            } //: VSTACK
+            
+        } //: SCROLLVIEW
         .statusBar(hidden: true)
     }
 }

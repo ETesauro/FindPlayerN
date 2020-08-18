@@ -10,8 +10,11 @@ import Firebase
 
 struct ProfileView : View {
     
+    //MARK: - PROPERTIES
     @ObservedObject var model : ModelData
     
+    
+    //MARK: - BODY
     var body: some View{
 
         VStack{
@@ -29,10 +32,11 @@ struct ProfileView : View {
                     .frame(width: UIScreen.main.bounds.width / 3)
                     .background(Color("top"))
                     .clipShape(Capsule())
-            }
+            } //: BUTTON
             .padding(.vertical,22)
             
             Spacer()
-        }
+        } //: VSTACK
+        
     }
 }

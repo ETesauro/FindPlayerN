@@ -8,6 +8,9 @@ target 'FindPlayer (iOS)' do
   # Pods for FindPlayer (iOS)
 
 pod 'Firebase/Auth'
+pod 'Firebase/Analytics'
+pod 'Firebase/Firestore'
+pod 'FirebaseFirestoreSwift'
 
 end
 
