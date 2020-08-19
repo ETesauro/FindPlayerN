@@ -67,6 +67,8 @@ struct SignUpView : View {
                 // VSTACK PER I TEXTFIELD
                 VStack(spacing: 20){
                     
+                    CustomTextField(image: "person", placeHolder: "Nickname", txt: $model.nickname_SignUp)
+                    
                     CustomTextField(image: "person", placeHolder: "Email", txt: $model.email_SignUp)
                     
                     CustomTextField(image: "lock", placeHolder: "Password", txt: $model.password_SignUp)
@@ -122,6 +124,7 @@ struct SignUpView : View {
                     
                     model.isSignUp.toggle()
                     model.email_SignUp = ""
+                    model.nickname_SignUp = ""
                     model.password_SignUp = ""
                     model.reEnterPassword = ""
                 }

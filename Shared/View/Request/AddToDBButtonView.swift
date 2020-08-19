@@ -32,7 +32,7 @@ struct AddToDBButtonView: View {
                 
                 richiesteRef.document("\(selected.name.prefix(3))\(maxCount)").setData([
                     "titolo": selected.name,
-                    "console":"PS4",
+                    "console":"XBOX",
                     "giocatore":Auth.auth().currentUser!.email!,
                     "id":maxCount
                 ])

@@ -10,6 +10,8 @@
 		315138737A9B5C08EA3865F3 /* Pods_FindPlayer__macOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2203FAB99779272D5C38960 /* Pods_FindPlayer__macOS_.framework */; };
 		32502AB924EC28BA008491FD /* AddToDBButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32502AB824EC28BA008491FD /* AddToDBButtonView.swift */; };
 		32502ABB24EC3011008491FD /* RichiestaDiGioco.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32502ABA24EC3011008491FD /* RichiestaDiGioco.swift */; };
+		327562E724EDB43C00DF4D31 /* Utente.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327562E624EDB43C00DF4D31 /* Utente.swift */; };
+		327562E924EDBBE900DF4D31 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327562E824EDBBE900DF4D31 /* DatabaseController.swift */; };
 		3295178A24EBE6670005C1FA /* FindPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177724EBE6660005C1FA /* FindPlayerApp.swift */; };
 		3295178B24EBE6670005C1FA /* FindPlayerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3295177724EBE6660005C1FA /* FindPlayerApp.swift */; };
 		3295178E24EBE6670005C1FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3295177924EBE6660005C1FA /* Assets.xcassets */; };
@@ -48,12 +50,15 @@
 		32E730CF24EBFA8A008A2F1E /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 32E730CD24EBFA8A008A2F1E /* loading.json */; };
 		32E730D024EBFA8A008A2F1E /* loading2.json in Resources */ = {isa = PBXBuildFile; fileRef = 32E730CE24EBFA8A008A2F1E /* loading2.json */; };
 		32E730D324EBFAEA008A2F1E /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 32E730D224EBFAEA008A2F1E /* Lottie */; };
+		32FA024124ED693300148D2A /* RequestCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FA024024ED693300148D2A /* RequestCardView.swift */; };
 		AA1CED40FFE6DCEDD6D75579 /* Pods_FindPlayer__iOS_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EAD5DF6855E45513D72F96 /* Pods_FindPlayer__iOS_.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		32502AB824EC28BA008491FD /* AddToDBButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToDBButtonView.swift; sourceTree = "<group>"; };
 		32502ABA24EC3011008491FD /* RichiestaDiGioco.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RichiestaDiGioco.swift; sourceTree = "<group>"; };
+		327562E624EDB43C00DF4D31 /* Utente.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utente.swift; sourceTree = "<group>"; };
+		327562E824EDBBE900DF4D31 /* DatabaseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		3295177724EBE6660005C1FA /* FindPlayerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindPlayerApp.swift; sourceTree = "<group>"; };
 		3295177924EBE6660005C1FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3295177E24EBE6670005C1FA /* FindPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FindPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +95,7 @@
 		32E730CB24EBFA82008A2F1E /* DataTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
 		32E730CD24EBFA8A008A2F1E /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		32E730CE24EBFA8A008A2F1E /* loading2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading2.json; sourceTree = "<group>"; };
+		32FA024024ED693300148D2A /* RequestCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestCardView.swift; sourceTree = "<group>"; };
 		3C358E53D33678A594FF7C61 /* Pods-FindPlayer (iOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindPlayer (iOS).release.xcconfig"; path = "Target Support Files/Pods-FindPlayer (iOS)/Pods-FindPlayer (iOS).release.xcconfig"; sourceTree = "<group>"; };
 		56EAD5DF6855E45513D72F96 /* Pods_FindPlayer__iOS_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FindPlayer__iOS_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B933E277C071C31616FF4F56 /* Pods-FindPlayer (macOS).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FindPlayer (macOS).release.xcconfig"; path = "Target Support Files/Pods-FindPlayer (macOS)/Pods-FindPlayer (macOS).release.xcconfig"; sourceTree = "<group>"; };
@@ -119,12 +125,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		32502AB724EC289E008491FD /* SendRequestToDBButton */ = {
+		32502AB724EC289E008491FD /* Request */ = {
 			isa = PBXGroup;
 			children = (
 				32502AB824EC28BA008491FD /* AddToDBButtonView.swift */,
+				32FA024024ED693300148D2A /* RequestCardView.swift */,
 			);
-			path = SendRequestToDBButton;
+			path = Request;
+			sourceTree = "<group>";
+		};
+		327562E524EDB42D00DF4D31 /* Utenti */ = {
+			isa = PBXGroup;
+			children = (
+				327562E624EDB43C00DF4D31 /* Utente.swift */,
+			);
+			path = Utenti;
+			sourceTree = "<group>";
+		};
+		327562EA24EDBF0F00DF4D31 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				327562E824EDBBE900DF4D31 /* DatabaseController.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		3295177124EBE6660005C1FA = {
@@ -182,7 +205,7 @@
 		3295179824EBF16D0005C1FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				32502AB724EC289E008491FD /* SendRequestToDBButton */,
+				32502AB724EC289E008491FD /* Request */,
 				32E7309D24EBF9E8008A2F1E /* SubView */,
 				32E730A824EBF9F8008A2F1E /* LoginRegister */,
 				32E7308D24EBF991008A2F1E /* Games */,
@@ -196,6 +219,8 @@
 		3295179924EBF1720005C1FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				327562EA24EDBF0F00DF4D31 /* Database */,
+				327562E524EDB42D00DF4D31 /* Utenti */,
 				32E730B324EBFA48008A2F1E /* LoginRegister */,
 				32E730B224EBFA43008A2F1E /* COD */,
 				32E730B124EBFA32008A2F1E /* Fortnite */,
@@ -509,11 +534,13 @@
 				32E730B924EBFA55008A2F1E /* CODResponse.swift in Sources */,
 				32E730C624EBFA67008A2F1E /* Game.swift in Sources */,
 				32E730A724EBF9F6008A2F1E /* ProfileView.swift in Sources */,
+				32FA024124ED693300148D2A /* RequestCardView.swift in Sources */,
 				32E7309624EBF9BE008A2F1E /* ErrorView.swift in Sources */,
 				32E730AD24EBFA04008A2F1E /* CustomTextFieldView.swift in Sources */,
 				32E730BE24EBFA5C008A2F1E /* FortniteStatsDetails.swift in Sources */,
 				32E730A624EBF9F6008A2F1E /* URLImageView.swift in Sources */,
 				32E7309C24EBF9D2008A2F1E /* MainView.swift in Sources */,
+				327562E924EDBBE900DF4D31 /* DatabaseController.swift in Sources */,
 				32E730C724EBFA67008A2F1E /* URLImageModel.swift in Sources */,
 				32502AB924EC28BA008491FD /* AddToDBButtonView.swift in Sources */,
 				32E730CC24EBFA82008A2F1E /* DataTest.swift in Sources */,
@@ -527,6 +554,7 @@
 				32E730B524EBFA4F008A2F1E /* ModelData.swift in Sources */,
 				32E730BF24EBFA5C008A2F1E /* FortniteResponse.swift in Sources */,
 				32E7309B24EBF9D2008A2F1E /* LottieView.swift in Sources */,
+				327562E724EDB43C00DF4D31 /* Utente.swift in Sources */,
 				32E730B024EBFA04008A2F1E /* SignUpView.swift in Sources */,
 				32E7309A24EBF9D2008A2F1E /* TopGamesView.swift in Sources */,
 				32E730A524EBF9F6008A2F1E /* RoundedShape.swift in Sources */,

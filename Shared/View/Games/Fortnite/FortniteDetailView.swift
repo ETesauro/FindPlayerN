@@ -27,7 +27,9 @@ struct FortniteDetailView: View {
     
     //DATABASE
     let db = Firestore.firestore()
-    @State private var richieste = [RichiestaDiGioco]()
+    @State private var richiestePS4 = [RichiestaDiGioco]()
+    @State private var richiesteXBOX = [RichiestaDiGioco]()
+    @State private var richiestePC = [RichiestaDiGioco]()
     
     
     //MARK: - BODY
@@ -36,9 +38,9 @@ struct FortniteDetailView: View {
         ZStack {
             
             
-            // MAIN VSTACK
-            VStack{
+            ScrollView(.vertical) {
                 
+                //VSTACK
                 VStack{
                     
                     
@@ -97,77 +99,115 @@ struct FortniteDetailView: View {
                     } //: ZSTACK
                     
                     
-                    // Details View...
-                    HStack(alignment: .top){
+                    //VSTACK PER LE INFO DEL GIOCO
+                    VStack(alignment: .leading, spacing: 12) {
+                        
+                        Text(selected.name)
+                            .font(.title)
                         
                         
-                        //VSTACK PER LE INFO DEL GIOCO
-                        VStack(alignment: .leading, spacing: 12) {
-                            
-                            Text(selected.name)
-                                .font(.title)
-                            
-                            
-//                            //VSTACK DELLA FOTO E NOME
-//                            HStack {
-//
-//                                URLImageView(urlString: avatar)
-//
-//                                Text(username)
-//                                    .font(.headline)
-//
-//                                Spacer()
-//                            }
-//
-//                            //VSTACK DELLE STATISTICHE (DA TOGLIERE DA QUI)
-//                            HStack {
-//                                ForEach(fortnite_stats, id: \.winRatio.value) { item in
-//
-//                                    VStack {
-//                                        Text("SOLO")
-//
-//                                        Text(item.top1.label)
-//                                        Text(item.top1.value)
-//                                    }
-//                                }
-//                            }
-                            
-                            
-                            // HSTACK PER IL BOTTONE PER FARE RICHIESTA
-                            HStack {
-                                Spacer(minLength: 0)
-                                
-                                AddToDBButtonView(selected: $selected)
-                                
-                                Spacer(minLength: 0)
-                            } //: HSTACK
-                            
-                            
-                            // VSTACK TEMPORANEO PER VEDERE I DATI PRESI DAL DB
-                            VStack {
-                                ForEach(richieste, id: \.id) { item in
-                                    HStack {
-                                        Text(item.titolo)
-                                        Text("\(item.giocatore)")
-                                        Text("\(item.console)")
-                                    }
-                                }
-                            } //: VSTACK
-                            
-                        } //:VSTACK
+                        //                            //VSTACK DELLA FOTO E NOME
+                        //                            HStack {
+                        //
+                        //                                URLImageView(urlString: avatar)
+                        //
+                        //                                Text(username)
+                        //                                    .font(.headline)
+                        //
+                        //                                Spacer()
+                        //                            }
+                        //
+                        //                            //VSTACK DELLE STATISTICHE (DA TOGLIERE DA QUI)
+                        //                            HStack {
+                        //                                ForEach(fortnite_stats, id: \.winRatio.value) { item in
+                        //
+                        //                                    VStack {
+                        //                                        Text("SOLO")
+                        //
+                        //                                        Text(item.top1.label)
+                        //                                        Text(item.top1.value)
+                        //                                    }
+                        //                                }
+                        //                            }
                         
-                        Spacer(minLength: 0)
-                    }
-                    .padding()
-                    .padding(.bottom)
+                        
+                        // HSTACK PER IL BOTTONE PER FARE RICHIESTA
+                        HStack {
+                            Spacer(minLength: 0)
+                            
+                            AddToDBButtonView(selected: $selected)
+                            
+                            Spacer(minLength: 0)
+                        } //: HSTACK
+                        
+                    } //:VSTACK
                     
-                } //: HSTACK
-                .background(Color.white)
-                .clipShape(RoundedShape(corners: [.bottomLeft,.bottomRight]))
+                    
+                } //: VSTACK
                 
-                Spacer(minLength: 0)
+                VStack {
+                    Text("PS4")
+                    
+                    ScrollView (.horizontal) {
+                        HStack {
+                            if(richiestePS4.isEmpty) {
+                                Text("Le richieste per PS4 non esistono")
+                            } else {
+                                ForEach(richiestePS4, id: \.id) { item in
+                                        RequestCardView(richiestaDiGioco: item)
+//                                                    .frame(height: 150)
+                                                    .cornerRadius(30)
+                                }
+                            }
+                        }
+                    }
+                    
+                    
+                    Text("XBOX")
+                    
+                    ScrollView (.horizontal) {
+                        HStack {
+                            if(richiesteXBOX.isEmpty) {
+                                Text("Le richieste per XBOX non esistono")
+                            } else {
+                                ForEach(richiesteXBOX, id: \.id) { item in
+                                        RequestCardView(richiestaDiGioco: item)
+                                                    .frame(height: 150)
+                                                    .cornerRadius(30)
+                                }
+                            }
+                        }
+                    }
+
+                    
+                    Text("PC")
+                    
+                    ScrollView (.horizontal) {
+                        HStack {
+                            if(richiestePC.isEmpty) {
+                                Text("Le richieste per PC non esistono")
+                            } else {
+                                ForEach(richiestePC, id: \.id) { item in
+                                        RequestCardView(richiestaDiGioco: item)
+                                                    .frame(height: 150)
+                                                    .cornerRadius(30)
+                                }
+                            }
+                        }
+                    }
+                }
+
                 
-            } //: MAIN VSTACK
+//                // MAIN VSTACK
+//                VStack{
+//
+//
+//
+//                    Spacer(minLength: 0)
+//
+//                } //: MAIN VSTACK
+                
+            } //: SCROLLVIEW
             
             if model.isLoading{
                 LoadingView()
@@ -230,11 +270,20 @@ struct FortniteDetailView: View {
     
     
     func loadFortniteRequests() {
-        db.collection("RichiesteDiGioco").whereField("titolo", isEqualTo: self.selected.name).getDocuments() { (querySnapshot, err) in
+        
+        let gamequery: Query = db.collection("RichiesteDiGioco").whereField("titolo", isEqualTo: self.selected.name)
+        
+//        var array = [RichiestaDiGioco]()
+        var arrayPS4 = [RichiestaDiGioco]()
+        var arrayXBOX = [RichiestaDiGioco]()
+        var arrayPC = [RichiestaDiGioco]()
+        
+        //CERCO TUTTE LE RICHIESTE PER IL GIOCO IN QUESTIONE E LE SALVO IN ARRAY1
+        gamequery.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                var array = [RichiestaDiGioco]()
+                
                 for document in querySnapshot!.documents {
                     let result = Result {
                         try document.data(as: RichiestaDiGioco.self)
@@ -243,20 +292,30 @@ struct FortniteDetailView: View {
                     switch result {
                     case .success(let richiestaDiGioco):
                         if let richiesta = richiestaDiGioco {
-                            // A `City` value was successfully initialized from the DocumentSnapshot.
-                            print("Richiesta: \(richiesta)")
-                            array.append(richiesta)
-                            self.richieste = array
+                            switch richiesta.console {
+                            case "PS4":
+                                arrayPS4.append(richiesta)
+                            case "XBOX":
+                                arrayXBOX.append(richiesta)
+                            case "PC":
+                                arrayPC.append(richiesta)
+                            default:
+                                print("console non riconosciuta")
+                            }
+//                            array.append(richiesta)
+//                            self.richieste = array
                         } else {
-                            // A nil value was successfully initialized from the DocumentSnapshot,
-                            // or the DocumentSnapshot was nil.
                             print("Document does not exist")
                         }
                     case .failure(let error):
-                        // A `City` value could not be initialized from the DocumentSnapshot.
                         print("Error decoding richiesta: \(error)")
                     }
                 }
+                
+                self.richiestePS4 = arrayPS4
+                self.richiestePC = arrayPC
+                self.richiesteXBOX = arrayXBOX
+                
                 self.model.isLoading.toggle()
             }
         }

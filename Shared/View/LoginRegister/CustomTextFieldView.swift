@@ -23,7 +23,7 @@ struct CustomTextField : View {
             Image(systemName: image)
                 .font(.system(size: 24))
                 .foregroundColor(Color("bottom"))
-                .frame(width: 60, height: 60)
+                .frame(width: 40, height: 40)
                 .background(Color.white)
                 .clipShape(Circle())
             
@@ -38,7 +38,7 @@ struct CustomTextField : View {
             } //: ZSTACK
             .padding(.horizontal)
             .padding(.leading,65)
-            .frame(height: 60)
+            .frame(height: 40)
             .background(Color.white.opacity(0.2))
             .clipShape(Capsule())
         } //: ZSTACK

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RichiestaDiGioco: Codable {
+struct RichiestaDiGioco: Codable, Hashable {
     var id: Int
     var console: String
     var giocatore: String

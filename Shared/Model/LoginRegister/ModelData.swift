@@ -7,6 +7,8 @@
 
 import SwiftUI
 import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class ModelData : ObservableObject {
     
@@ -15,6 +17,7 @@ class ModelData : ObservableObject {
     @Published var password = ""
     @Published var isSignUp = false
     @Published var email_SignUp = ""
+    @Published var nickname_SignUp = ""
     @Published var password_SignUp = ""
     @Published var reEnterPassword = ""
     @Published var isLinkSend = false
@@ -33,7 +36,7 @@ class ModelData : ObservableObject {
     
     @Published var isLoading = false
     
-    
+    let db = Firestore.firestore()
     
     
     //MARK: - Login
@@ -131,8 +134,15 @@ class ModelData : ObservableObject {
                 return
             }
             
-            // sending Verifcation Link....
             
+            
+            //MARK: - SALVO L'UTENTE NEL DATABASE MYSQL
+            registerUser(name: self.nickname_SignUp, surname: self.password_SignUp, email: self.email_SignUp)
+            
+            
+            
+            
+            // MARK: - MANDO IL LINK DI VERIFICA
             result?.user.sendEmailVerification(completion: { (err) in
                 
                 if err != nil{
@@ -141,8 +151,24 @@ class ModelData : ObservableObject {
                     return
                 }
                 
-                // Alerting User To Verify Email...
+//                // SALVO L'UTENTE NEL DATABASE (MI SERVE?)
+//                let richiesteRef = self.db.collection("users")
+//                var maxCount = 0
+//
+//                richiesteRef.getDocuments() { (querySnapshot, err) in
+//                    maxCount = querySnapshot!.count + 1
+//                    print(maxCount)
+//
+//                    richiesteRef.document("users\(maxCount)").setData([
+//                        "nickname": self.nickname_SignUp,
+//                        "email": self.email_SignUp,
+//                        "id": maxCount
+//                    ])
+//
+//                    print("Registrazione effettuata")
+//                }
                 
+                //MARK: - AVVISO DI CONTROLLARE L'EMAIL
                 self.alertMsg = "Email verification has been sent. Verify your email."
                 self.alert.toggle()
             })

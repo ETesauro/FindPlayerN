@@ -34,6 +34,7 @@ struct CODDetailView: View {
             // MAIN VSTACK
             VStack{
                 
+                // VSTACK
                 VStack{
                     
                     // ZSTACK PER L'HEADER
@@ -47,41 +48,41 @@ struct CODDetailView: View {
                             .clipShape(RoundedShape(corners: [.bottomLeft,.bottomRight]))
                             .matchedGeometryEffect(id: selected.image, in: animation)
                         
-                            
+                        
                         // HSTACK PER I BOTTONI (CUORE E CHIUDI)
-                            HStack {
+                        HStack {
+                            
+                            
+                            //BOTTONE CUORE
+                            Button(action: {
                                 
-                                
-                                //BOTTONE CUORE
-                                Button(action: {
-                                    
-                                }, label: {
-                                    Image(systemName: "suit.heart.fill")
-                                        .foregroundColor(.red)
-                                        .padding()
-                                        .background(Color.black.opacity(0.5))
-                                        .clipShape(Circle())
-                                }) //: BUTTON
-                                
-                                Spacer()
-                                
-                                //BOTTONE PER CHIUDERE
-                                Button(action: {
-                                    withAnimation(.spring()) {
-                                        show.toggle()
-                                    }
-                                }, label: {
-                                    Image(systemName: "xmark")
-                                        .foregroundColor(.white)
-                                        .padding()
-                                        .background(Color.black.opacity(0.5))
-                                        .clipShape(Circle())
-                                }) //: BUTTON
-                                
-                            } //: HSTACK
-                            .padding()
-                            // since all edges are ignored....
-                            .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
+                            }, label: {
+                                Image(systemName: "suit.heart.fill")
+                                    .foregroundColor(.red)
+                                    .padding()
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(Circle())
+                            }) //: BUTTON
+                            
+                            Spacer()
+                            
+                            //BOTTONE PER CHIUDERE
+                            Button(action: {
+                                withAnimation(.spring()) {
+                                    show.toggle()
+                                }
+                            }, label: {
+                                Image(systemName: "xmark")
+                                    .foregroundColor(.white)
+                                    .padding()
+                                    .background(Color.black.opacity(0.5))
+                                    .clipShape(Circle())
+                            }) //: BUTTON
+                            
+                        } //: HSTACK
+                        .padding()
+                        // since all edges are ignored....
+                        .padding(.top,UIApplication.shared.windows.first?.safeAreaInsets.top)
                         
                     } //: ZSTACK
                     
@@ -95,10 +96,10 @@ struct CODDetailView: View {
                             Text(selected.name)
                                 .font(.title)
                             
-//                            Image(systemName: "heart.fill")
-//
-//                            Image(systemName: "star.fill")
-//                                .foregroundColor(.yellow)
+                            //                            Image(systemName: "heart.fill")
+                            //
+                            //                            Image(systemName: "star.fill")
+                            //                                .foregroundColor(.yellow)
                             
                             
                             // HSTACK PER IL BOTTONE PER FARE RICHIESTA
@@ -128,7 +129,7 @@ struct CODDetailView: View {
                     .padding()
                     .padding(.bottom)
                     
-                }
+                } //: VSTACK
                 .background(Color.white)
                 .clipShape(RoundedShape(corners: [.bottomLeft,.bottomRight]))
                 
@@ -197,11 +198,17 @@ struct CODDetailView: View {
     
     
     func loadCodRequests() {
-        db.collection("RichiesteDiGioco").whereField("titolo", isEqualTo: self.selected.name).getDocuments() { (querySnapshot, err) in
+        
+        let gamequery: Query = db.collection("RichiesteDiGioco").whereField("titolo", isEqualTo: self.selected.name)
+        
+        var array = [RichiestaDiGioco]()
+        
+        //CERCO TUTTE LE RICHIESTE PER IL GIOCO IN QUESTIONE E LE SALVO IN ARRAY1
+        gamequery.getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
-                var array = [RichiestaDiGioco]()
+                
                 for document in querySnapshot!.documents {
                     let result = Result {
                         try document.data(as: RichiestaDiGioco.self)
@@ -210,22 +217,19 @@ struct CODDetailView: View {
                     switch result {
                     case .success(let richiestaDiGioco):
                         if let richiesta = richiestaDiGioco {
-                            // A `City` value was successfully initialized from the DocumentSnapshot.
-                            print("Richiesta: \(richiesta)")
                             array.append(richiesta)
                             self.richieste = array
                         } else {
-                            // A nil value was successfully initialized from the DocumentSnapshot,
-                            // or the DocumentSnapshot was nil.
                             print("Document does not exist")
                         }
                     case .failure(let error):
-                        // A `City` value could not be initialized from the DocumentSnapshot.
                         print("Error decoding richiesta: \(error)")
                     }
                 }
+                
                 self.model.isLoading.toggle()
             }
         }
+        
     }
 }

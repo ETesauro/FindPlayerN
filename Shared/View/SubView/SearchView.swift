@@ -13,7 +13,7 @@ struct SearchView : View {
     
     //MARK: - BODY
     var body: some View{
-        
+                
         VStack{
             
             Spacer()
@@ -22,5 +22,6 @@ struct SearchView : View {
             
             Spacer()
         } //: VSTACK
+        .padding()
     }
 }
